@@ -5,7 +5,7 @@ import CustomOption from "./CustomOption";
 import ClicksAndImpressions from "./ClicksAndImmpressions";
 
 const service = new GoogleAdwordsService();
-const promiseOptions = inputValue => service.getData(inputValue);
+const promiseOptions = inputValue => service.getData(inputValue).catch(err => console.error(err));
 class Search extends Component {
 
     state = {

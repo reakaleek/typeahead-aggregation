@@ -13,7 +13,7 @@ const CustomOption = (inputValue) => ({ innerRef, innerProps, isDisabled, isSele
             }>
                 <div className="tag is-dark has-text-white">
                     <Highlighter searchWords={[inputValue]}
-                                 textToHighlight={campaign}/>
+                                 textToHighlight={campaign.join(' | ')}/>
                 </div>
                 <div style={{ margin: '.25rem 0 0 .25rem' }}>
                     <Highlighter searchWords={[inputValue]}
