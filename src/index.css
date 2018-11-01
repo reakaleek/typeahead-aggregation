@@ -8,3 +8,11 @@
 .custom-select-option:hover {
     background-color: whitesmoke;
 }
+
+.custom-select-option--focused {
+    background-color: whitesmoke;
+}
+
+.custom-select-option--selected {
+    background-color: palegreen;
+}

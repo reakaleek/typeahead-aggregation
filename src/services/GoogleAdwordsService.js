@@ -3,17 +3,17 @@ import _ from "lodash";
 export default class GoogleAdwordsService {
 
     getData = (word) => {
-
-        if (!word) {
-            return Promise.all([]);
-        }
-
-        return new Promise(resolve => {
+        return new Promise((resolve, reject) => {
             setTimeout(() => {
+                if (!word) {
+                    resolve([]);
+                }
                 import('../adwords.json')
                     .then(data => {
                         const adwords = _.tail(data.default.data.split('\n')).map(this.mapToAdword);
-                        resolve(adwords.filter(this.containsWord(word)));
+                        resolve(_.filter(adwords, this.containsWord(word)));
+                    }).catch(err => {
+                        reject(err);
                     })
             }, 500);
         })

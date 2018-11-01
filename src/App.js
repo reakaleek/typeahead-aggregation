@@ -4,10 +4,10 @@ import AsyncSelect from 'react-select/lib/Async';
 import ClicksAndImpressions from "./components/ClicksAndImmpressions";
 import CustomOption from "./components/CustomOption";
 import Hero from "./components/Hero";
+import _ from 'lodash';
 
 const service = new GoogleAdwordsService();
 const promiseOptions = inputValue => service.getData(inputValue);
-
 class App extends Component {
 
   state = {
@@ -34,7 +34,6 @@ class App extends Component {
                                  onInputChange={this.handleInputChange}
                                  loadOptions={promiseOptions}
                                  onChange={this.handleChange}
-
                                  getOptionLabel={(option) => option['channel']}
                                  getOptionValue={(option) => option}
                                  components={{ Option: CustomOption(this.state.inputText) }}
